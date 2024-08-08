@@ -29,7 +29,7 @@ class DataTransformation:
                                     ("Scaler",StandardScaler())
             ])
             cat_pipeline = Pipeline(steps=[
-                                    ("labelencoder",OneHotEncoder()),
+                                    ("OneHotEncoder",OneHotEncoder()),
                                     ("Scaler",StandardScaler(with_mean=False))
             ])
             print(f"categotrical columns {cat_columns}")
@@ -52,18 +52,24 @@ class DataTransformation:
         try:
             train_df = pd.read_csv(train_path)
             test_df = pd.read_csv(test_path)
+            # print("####################################################3")
+            # print(train_df.head(2))
+            # print("####################################################3")
+            # print(test_df.head(2))
+            # print("####################################################3")
 
             print("Reading the dataset")
 
             preprocessing_obj = self.get_data_transformation_object()
             print(preprocessing_obj,"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             target_column_name = "price"
-            num_column = ["area","stories","bedrooms","bathrooms","parking"]
             
             # diving train data set
             input_features_train_df = train_df.drop(columns=[target_column_name],axis=1)
             target_features_train_df = train_df[target_column_name]
-
+            print("####################################################")
+            print("input_features_train_df",input_features_train_df)
+            print("####################################################")
             # diving test data set
             input_features_test_df = test_df.drop(columns=[target_column_name],axis=1)
             target_features_test_df = test_df[target_column_name]
@@ -73,16 +79,21 @@ class DataTransformation:
 
             input_feature_train_arr = preprocessing_obj.fit_transform(input_features_train_df)
             input_feature_test_arr = preprocessing_obj.transform(input_features_test_df)
-            
+            print("####################################################")
+            print("len(input_feature_train_arr[0])",len(input_feature_train_arr[0]))
+            print("####################################################")
             train_arr = np.c_[input_feature_train_arr,np.array(target_features_train_df)]
             test_arr = np.c_[input_feature_test_arr,np.array(target_features_test_df)]
-
+            print("####################################################")
+            print("len(train_arr[0])",len(train_arr[0]))
+            print("####################################################")
             print("Saved preprocessing")
 
             save_object(file_path=self.data_transformation_config.preprocessor_obj_file_path,
                         obj=preprocessing_obj
                         )
             print('object saved sucessfully')
+            
             return (
                 train_arr,
                 test_arr,
