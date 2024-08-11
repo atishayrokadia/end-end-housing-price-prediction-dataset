@@ -87,7 +87,7 @@
 				<div class="form-row-total">
 
                     <div class="form-row">
-                        <label for="bedrooms"> Citric Acid:</label>
+                        <label for="bedrooms"> bedrooms:</label>
 						<input type="text" name="bedrooms" id="bedrooms" class="input-text" placeholder="bedrooms" required>
 					</div>
 
@@ -102,7 +102,8 @@
 
                 <div class="form-row-total">
 
-                    <div class="form-row">
+                    <!-- <div class="form-row">
+                        
                         <label for="airconditioning">Air Conditioning:</label>
                         <div class="radio-group">
                             <input type="radio" id="ac-yes" name="airconditioning" value="yes" required>
@@ -111,7 +112,14 @@
                             <input type="radio" id="ac-no" name="airconditioning" value="no">
                             <label for="ac-no" class="radio-label">No</label>
                         </div>
-					</div>
+					</div> -->
+                    <div class="form-row">
+                        <label for="airconditioning">Air Conditioning:</label>
+                        <select id="airconditioning" name="airconditioning" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
 
                     <div class="form-row">
                         <label for="parking"> parking:</label>
@@ -123,7 +131,7 @@
 
                 <div class="form-row-total">
 
-                    <div class="form-row">
+                    <!-- <div class="form-row">
                         <label for="prefarea">prefarea:</label>
                         <div class="radio-group">
                             <input type="radio" id="ac-yes" name="prefarea" value="yes" required>
@@ -132,7 +140,16 @@
                             <input type="radio" id="prefarea-no" name="prefarea" value="no">
                             <label for="prefarea-no" class="radio-label">No</label>
                         </div>
-					</div>
+					</div> -->
+                    
+                    <div class="form-row">
+                        <label for="prefarea">Preferred Area:</label>
+                        <select id="prefarea" name="prefarea" required>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    
 
                     <div class="form-row">
                         <label for="furnishingstatus">Furnishing Status:</label>
@@ -199,3 +216,5 @@
         <script src="static/js/scripts.js"></script>
     </body>
 </html>
+
+

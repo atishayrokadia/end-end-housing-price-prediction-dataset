@@ -4,13 +4,10 @@ from src.mlProject.components.data_transformation import DataTransformation
 from src.mlProject.components.data_transformation import DataTranformationConfig
 from src.mlProject.components.model_trainer import ModelTrainer
 from src.mlProject.components.model_trainer import ModelTrainerConfig
-from src.mlProject.logger import logging
 from src.mlProject.exception import CustomException
 import sys
 
 if __name__=='__main__':
-    logging.info("The execution has started")
-
     try:
         # data_ingection_config =  DataIngestionConfig()
         data_ingestion =  DataIngestion()
@@ -32,5 +29,4 @@ if __name__=='__main__':
 
 
     except Exception as e:
-        logging.info("Custom Exception")
         raise CustomException(e,sys)

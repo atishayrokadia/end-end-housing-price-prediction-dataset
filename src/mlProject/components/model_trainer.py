@@ -7,9 +7,10 @@ from xgboost import XGBRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.tree import DecisionTreeRegressor
-from src.mlProject.utils import save_object,evaluate_models,find_key_by_value
+from src.mlProject.utils import save_object,find_key_by_value
 from sklearn.metrics import mean_absolute_percentage_error
 import numpy as np
+
 @dataclass
 class ModelTrainerConfig:
     trained_model_file_path = os.path.join("artifact","model.pkl")

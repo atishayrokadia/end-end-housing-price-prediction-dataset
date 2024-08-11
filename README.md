@@ -26,7 +26,7 @@ conda activate mlProject
 pip install -r requirements.txt
 ```
 ```
-Check some parameter corelation with price
+Checking  parameter corelation with price
 here are the results.
 price               1.000000
 area                0.535997
@@ -41,7 +41,7 @@ airconditioning     0.452954
 parking             0.384394
 prefarea            0.329777
 furnishingstatus   -0.304721
-We have taken parameter who havee absolugte value greater than abs(0.3)
+We have selected parameters with an absolute value greater than abs(0.3)
 ```
 ```bash
 # Finally run the following command

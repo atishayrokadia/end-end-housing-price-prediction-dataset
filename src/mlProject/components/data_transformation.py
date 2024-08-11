@@ -7,7 +7,6 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import StandardScaler,OneHotEncoder
 from sklearn.pipeline import Pipeline
 from src.mlProject.exception import CustomException
-from src.mlProject.logger import logging
 from src.mlProject.utils import save_object
 from sklearn.compose import ColumnTransformer
 
